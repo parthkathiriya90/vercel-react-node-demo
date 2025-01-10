@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "serve": "nodemon --experimental-modules index.mjs",
-    "start": "node index.mjs",
-    "dev": "concurrently \"npm run start --workspace=client\" \"nodemon index.mjs\"",
-    "lint": "eslint ./**/*.{js,mjs}"
+    "postinstall": "cd ../frontend && npm install && npm run build",
+    "start": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
