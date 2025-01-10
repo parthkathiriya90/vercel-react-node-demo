@@ -1,26 +1,23 @@
 {
-  "version": 3,
+  "version": 2,
   "builds": [
     {
-      "src": "server",
-      "use": "@vercel/node",
-      "config": {
-        "zeroConfig": true
-      }
+      "src": "client/package.json",
+      "use": "@vercel/static-build"
     },
     {
-      "src": "client",
-      "use": "@vercel/static"
+      "src": "server/index.mjs",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/client/public/index.html"
+      "dest": "/client/$1"
     },
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.js"
+      "dest": "/server/$1"
     }
   ]
 }
