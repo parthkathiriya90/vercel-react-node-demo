@@ -1,16 +1,26 @@
 {
-  "version": 2,
+  "version": 3,
   "builds": [
     {
-      "src": "server/index.js",
-      "use": "@vercel/node"
+      "src": "server",
+      "use": "@vercel/node",
+      "config": {
+        "zeroConfig": true
+      }
+    },
+    {
+      "src": "client",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "server/index.js"
+      "dest": "/client/public/index.html"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/server/index.js"
     }
-  ],
-  "buildCommand": "npm install --prefix server && npm install --prefix client && npm run build --prefix client"
+  ]
 }

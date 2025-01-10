@@ -1,0 +1,16 @@
+{
+    "name": "my-vercel-project",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "npm run start:client",
+      "start:client": "cd client && npm start",
+      "start:server": "cd server && npm start",
+      "dev": "concurrently \"npm run start:server\" \"npm run start:client\"" 
+    },
+    "dependencies": {
+      
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.0" 
+    }
+  }
