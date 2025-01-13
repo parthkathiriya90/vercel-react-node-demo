@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "postinstall": "cd ../frontend && npm install && npm run build",
-    "start": "node index.js"
+    "postinstall": "cd ./client && npm run build",
+    "start": "node index.mjs"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
