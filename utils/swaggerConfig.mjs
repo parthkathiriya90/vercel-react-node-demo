@@ -1,7 +1,5 @@
 import swaggerJsdoc from "swagger-jsdoc";
 
-let PORT = process.env.PORT || 3001;
-
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -10,13 +8,6 @@ const options = {
       version: "1.0.0",
       description: "API documentation for Famoid",
     },
-    servers: [
-      {
-        url: process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}`
-          : `http://localhost:${PORT}`,
-      },
-    ],
     components: {
       securitySchemes: {
         bearerAuth: {
