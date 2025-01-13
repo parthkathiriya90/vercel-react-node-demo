@@ -7,7 +7,7 @@
     "serve": "nodemon --experimental-modules index.mjs",
     "start": "npm run build && node index.mjs",
     "dev": "concurrently \"cd client && npm run start\" \"nodemon index.mjs\"",
-    "build": "cd client && npm install && npm run build"
+    "build": "cd ./client && npm install && npm run build"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
