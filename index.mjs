@@ -21,13 +21,14 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
-// Swagger documentation setup
-app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(specs));
 
 // API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/profile", profileRoutes);
+
+// Swagger documentation setup
+app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(specs));
 
 // Get the current file's directory name for serving React files
 const __filename = fileURLToPath(import.meta.url);
