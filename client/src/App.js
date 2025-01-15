@@ -12,6 +12,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/user');
+        setData(response)
         console.log(response, "responseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponse");
 
       } catch (error) {
