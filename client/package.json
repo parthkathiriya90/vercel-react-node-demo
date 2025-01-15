@@ -1,5 +1,5 @@
 {
-  "name": "client", 
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,8 +13,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,jsx}" 
+    "lint": "eslint src/**/*.{js,jsx}"
   },
+  "proxy": "https://vercel-react-node-demo.vercel.app/",
   "eslintConfig": {
     "extends": [
       "react-app",
