@@ -12,7 +12,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/user');
-        setData(response.data)
+        setData(response.data.data)
         console.log(response, "responseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponse");
 
       } catch (error) {
@@ -47,8 +47,8 @@ function App() {
       <div>
         <h1>Data from API</h1>
         <ul>
-          {data.map(item => (
-            <li key={item.id}>{item.name}</li>
+          {data?.map(item => (
+            <li key={item.id}>{item.firstName}</li>
           ))}
         </ul>
       </div>
