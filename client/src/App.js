@@ -47,7 +47,7 @@ function App() {
       <div>
         <h1>Data from API</h1>
         <ul>
-          {data?.map(item => (
+          {data.length > 0 && data.map(item => (
             <li key={item.id}>{item.firstName}</li>
           ))}
         </ul>
