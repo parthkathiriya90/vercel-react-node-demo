@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import Home from './page/home';
-import './style/style.css';
-import './style/style2.css';
+import '../src/style/style.css';
+import '../src/style/style2.css';
 import Service from './page/service';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './Components/Header';
