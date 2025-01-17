@@ -1,8 +1,6 @@
 import nodemailer from 'nodemailer'
-import { welcomeMailFormat } from "../Template/welcomeEmail.mjs"
+import { welcomeMailFormate } from "../Template/welcomeEmail.mjs"
 import { forgotPasswordFormat } from '../Template/forgotPassword.mjs';
-import { otpMailFormat } from '../Template/sendOTP.mjs';
-import { resetPasswordSuccessFormat } from '../Template/resetPassword.mjs';
 
 export async function nodemailerConfiguration() {
     return nodemailer.createTransport({
@@ -16,7 +14,7 @@ export async function nodemailerConfiguration() {
     });
 }
 
-export async function welcomeEmail(email) {
+export async function welcomeEmail(email, token) {
     try {
 
         const transporter = await nodemailerConfiguration()
@@ -25,7 +23,7 @@ export async function welcomeEmail(email) {
             from: `"Parth Kathiriya 👻" ${process.env.EMAIL}`,
             to: email,
             subject: "Welcome to our site.",
-            html: welcomeMailFormat(),
+            html: welcomeMailFormate(token),
         });
 
         console.log("- Email sent successfully".green);
@@ -35,33 +33,15 @@ export async function welcomeEmail(email) {
     }
 }
 
-export async function forgotPasswordEmail(email, otp) {
+export async function sendOTPEmail(email, otp) {
     try {
         const transporter = await nodemailerConfiguration()
 
         const info = await transporter.sendMail({
             from: `${process.env.EMAIL}`,
             to: email,
-            subject: "Password change successfully",
-            html: resetPasswordSuccessFormat(),
-        });
-
-        console.log("- Email sent successfully".green);
-        return info
-    } catch (error) {
-        throw new Error(error);
-    }
-}
-
-export async function sendOTPEmail(email, otp, isVerified) {
-    try {
-        const transporter = await nodemailerConfiguration()
-
-        const info = await transporter.sendMail({
-            from: `${process.env.EMAIL}`,
-            to: email,
-            subject: "Verify email OTP",
-            html: otpMailFormat(otp),
+            subject: "Forgot Password OTP",
+            html: forgotPasswordFormat(otp),
         });
 
         console.log("- Email sent successfully".green);

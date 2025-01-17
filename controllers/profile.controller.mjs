@@ -1,5 +1,5 @@
 import { mapUser } from "../mapping/userMapper.mjs";
-import User from "../models/user.model.mjs";
+import User from "../models/userModel.mjs";
 
 const profileData = async (req, res) => {
   console.log("=> Start get profile process.".yellow);
