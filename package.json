@@ -1,10 +1,10 @@
 {
-  "name": "famoid-server",
+  "name": "famoid",
   "version": "1.0.0",
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "postinstall": "if [ -d ./Client ]; then cd ./Client && npm install && npm run build; else echo 'Client directory not found'; fi",
+    "postinstall": "cd Client && npm install && npm run build",
     "serve": "nodemon --experimental-modules index.mjs",
     "start": "node index.mjs",
     "dev": "concurrently \"cd Client && npm run start\" \"nodemon index.mjs\""
