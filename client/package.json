@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:4001",
+  "proxy": "https://vercel-react-node-demo.vercel.app/",
   "eslintConfig": {
     "extends": [
       "react-app",
