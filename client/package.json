@@ -1,5 +1,5 @@
 {
-  "name": "famoid-Client",
+  "name": "famoid",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
