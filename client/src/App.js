@@ -7,6 +7,7 @@ function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
