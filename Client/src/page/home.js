@@ -13,7 +13,7 @@ export default function Home() {
         setSelectedService(service);
         setShowModel(true);
     };
- 
+
     var settings = {
         dots: false,
         infinite: false,
