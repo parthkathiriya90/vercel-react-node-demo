@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { services } from '../services/services.services';
-import { Link } from 'react-router-dom';
 
 export default function Service() {
     const { slug } = useParams();

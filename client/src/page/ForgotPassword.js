@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { authServices } from "../services/auth.services";
 import { Link } from "react-router-dom";
 
-export default function ForgotPass() {
+export default function ForgotPassword() {
   const [userEmail, setUserEmail] = useState("");
   const [otp, setOTP] = useState("");
   const [newPwd, setNewPwd] = useState("");
