@@ -1,10 +1,10 @@
-export const welcomeMailFormat = () => {
+export const resetPasswordSuccessFormat = () => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Site</title>
+    <title>Password Reset Successful</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,23 +32,25 @@ export const welcomeMailFormat = () => {
         .button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #28a745;
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
+            text-align: center;
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #218838;
         }
     </style>
     </head>
     <body>
     <div class="container">
-        <h1>Welcome to Our Site</h1>
+        <h1>Password Reset Successful</h1>
         <p>Hello,</p>
-        <p>Thank you for joining our community! We're excited to have you on board. Start exploring and enjoy the benefits of being a member of our site.</p>
+        <p>Your password has been successfully reset. You can now use your new password to log in to your account.</p>
+        <p>If you did not initiate this request, please contact support immediately.</p>
         <p>Best regards,<br>Our Site Team</p>
     </div>
     </body>
-    </html>`
-}
+    </html>`;
+};

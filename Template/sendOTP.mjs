@@ -1,10 +1,10 @@
-export const welcomeMailFormat = () => {
+export const otpMailFormat = (otp) => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Site</title>
+    <title>OTP Verification</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,11 +23,17 @@ export const welcomeMailFormat = () => {
         h1 {
             color: #333333;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         p {
             color: #666666;
             margin-bottom: 20px;
+        }
+        .otp {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 10px 0;
         }
         .button {
             display: inline-block;
@@ -36,6 +42,7 @@ export const welcomeMailFormat = () => {
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
+            text-align: center;
         }
         .button:hover {
             background-color: #0056b3;
@@ -44,9 +51,11 @@ export const welcomeMailFormat = () => {
     </head>
     <body>
     <div class="container">
-        <h1>Welcome to Our Site</h1>
+        <h1>OTP Verification</h1>
         <p>Hello,</p>
-        <p>Thank you for joining our community! We're excited to have you on board. Start exploring and enjoy the benefits of being a member of our site.</p>
+        <p>We received a request to verify your email address. Please use the following OTP to complete the verification:</p>
+        <p class="otp">${otp}</p>
+        <p>This OTP is valid for 10 minutes. If you did not request this, please ignore this email.</p>
         <p>Best regards,<br>Our Site Team</p>
     </div>
     </body>
