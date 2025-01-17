@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "postinstall": "cd client && npm install && npm run build",
+    "postinstall": "cd Client && npm install && npm run build",
     "serve": "nodemon --experimental-modules index.mjs",
     "start": "node index.mjs",
-    "dev": "concurrently \"cd client && npm run start\" \"nodemon index.mjs\""
+    "dev": "concurrently \"cd Client && npm run start\" \"nodemon index.mjs\""
   },
   "keywords": [],
   "author": "",
