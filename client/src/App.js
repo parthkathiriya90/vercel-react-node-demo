@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import './App.css';
-import Home from './page/Home';
-import './style/style.css';
-import './style/style2.css';
+import Home from './page/home';
+import '../src/style/style.css';
+import '../src/style/style2.css';
 import Service from './page/service';
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation, matchPath } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Login from './page/login';
 import Faq from './page/faq';
 import Register from './page/register';
 import Contact from './page/contact';
-import ForgotPass from './page/ForgotPassword';
+import ForgotPassword from './page/ForgotPassword';
 import Policy from './page/Policy';
 import Termscondition from './page/Termscondition';
 import InstaIssue from './page/InstaIssue';
@@ -33,19 +33,22 @@ const App = () => {
   const [servicesData, setServicesData] = useState([]);
 
   // Paths where Header/Footer should be conditionally hidden
-  const noHeaderFooterPaths = ['/login', '/register', '/forgot-password', '/blog', '/instagram-issue', '/media-update', '/order'];
+  const noHeaderFooterPaths = ['/login', '/register', '/forgot-password', '/blog', '/instagram-issue', '/media-update', '/order/:slug'];
   const blogHeaderFooterPaths = ['/blog', '/instagram-issue', '/media-update'];
 
   // Determine layout
-  const showHeaderFooter = !noHeaderFooterPaths.includes(location.pathname);
-  const showBlogHeaderFooter = blogHeaderFooterPaths.includes(location.pathname);
+  // const showHeaderFooter = !noHeaderFooterPaths.includes(location.pathname);
+  // const showBlogHeaderFooter = blogHeaderFooterPaths.includes(location.pathname);
+
+  const showHeaderFooter = !noHeaderFooterPaths.some((path) => matchPath(path, location.pathname));
+  const showBlogHeaderFooter = blogHeaderFooterPaths.some((path) => matchPath(path, location.pathname));
 
   return (
     <>
       <AppContext.Provider
         value={{
           state: {
-            servicesData: servicesData
+            servicesData: servicesData,
           },
           setServicesData: setServicesData
         }}
@@ -60,14 +63,14 @@ const App = () => {
           <Route path="/register" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Register /></ProtectedRoute>} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/forgot-password" element={<ProtectedRoute isAuthenticated={isAuthenticated}><ForgotPass /></ProtectedRoute>} />
+          <Route path="/forgot-password" element={<ProtectedRoute isAuthenticated={isAuthenticated}><ForgotPassword /></ProtectedRoute>} />
           <Route path="/privacy-policy" element={<Policy />} />
           <Route path="/terms-condition" element={<Termscondition />} />
           <Route path="/instagram-issue" element={<InstaIssue />} />
           <Route path="/media-update" element={<MediaUpdate />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog-detail" element={<BlogDetail />} />
-          <Route path="/order" element={<Order />} />
+          <Route path="/order/:slug" element={<Order />} />
           <Route path="/profile" element={<PrivateRoute isAuthenticated={isAuthenticated}><Profile /></PrivateRoute>} />
           <Route path="/free-followers" element={<FreeFollowers />} />
           <Route path="/payment" element={<Payment />} />

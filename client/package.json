@@ -12,12 +12,12 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=4000 &&  react-scripts start",
     "build": "react-scripts build || true",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:4001",
   "eslintConfig": {
     "extends": [
       "react-app",
