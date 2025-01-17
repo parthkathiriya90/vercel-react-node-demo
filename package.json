@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "postinstall": "cd Client && npm install && npm run build",
-    "serve": "nodemon --experimental-modules index.mjs",
-    "start": "node index.mjs",
-    "dev": "concurrently \"cd Client && npm run start\" \"nodemon index.mjs\""
+    "postinstall": "cd Client && npm run build",
+    "dev": "concurrently \"cd Client && npm start\" \"vercel dev\"",
+    "start": "vercel dev",
+    "build": "cd Client && npm run build"
   },
   "keywords": [],
   "author": "",
