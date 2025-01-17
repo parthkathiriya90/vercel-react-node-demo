@@ -1,4 +1,4 @@
-export const welcomeMailFormate = (token) => {
+export const welcomeMailFormat = () => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -44,13 +44,11 @@ export const welcomeMailFormate = (token) => {
     </head>
     <body>
     <div class="container">
-       <h1>Welcome to Our Site</h1>
+        <h1>Welcome to Our Site</h1>
         <p>Hello,</p>
-        <p>Thank you for joining our community! To complete your registration, please verify your email address by clicking the button below:</p>
-        <p><a class="button" href="${process.env.VERIFY_EMAIL_PATH}${token}">Verify Email Address</a></p>
-        <p>If you did not sign up for an account, please ignore this email.</p>
+        <p>Thank you for joining our community! We're excited to have you on board. Start exploring and enjoy the benefits of being a member of our site.</p>
         <p>Best regards,<br>Our Site Team</p>
-        </div>
-        </body>
-        </html>`
+    </div>
+    </body>
+    </html>`
 }
