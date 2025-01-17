@@ -1,6 +1,14 @@
+require('dotenv').config(); // Load environment variables from the .env file
+
 module.exports = {
-    // Other configurations...
-    rules: {
-        'no-unused-vars': 'off', // Disable the no-unused-vars rule
-    },
+  "overrides": [
+    {
+      "files": ["**/*.js", "**/*.jsx"],
+      "rules": {
+        // Adjust rules based on the NODE_ENV value from the .env file
+        "react-hooks/exhaustive-deps": 'off',  // Disable in production
+        "no-unused-vars": 'warn',  // Warn in production
+      }
+    }
+  ]
 };
