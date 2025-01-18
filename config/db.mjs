@@ -3,6 +3,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+const options = {
+    connectTimeoutMS: 60000,
+    serverSelectionTimeoutMS: 60000,
+};
+
 const connectToDatabase = async () => {
     const uri = process.env.MONGODB_URI;
     if (!uri) {
@@ -10,11 +15,12 @@ const connectToDatabase = async () => {
     }
 
     try {
-        await mongoose.connect(uri);
+        await mongoose.connect(uri, options);
         console.log("Connected to MongoDB");
     } catch (err) {
         console.error("Error connecting to MongoDB:", err);
     }
 };
 
+// Call the function to connect to the database
 export default connectToDatabase;
