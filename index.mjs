@@ -29,7 +29,13 @@ app.use(cors({
 app.use(express.json());
 
 // Swagger documentation setup
-app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(specs));
+const options = {
+  customCss: '.swagger-ui .topbar { display: none }',
+  customSiteTitle: 'My API Documentation',
+};
+
+app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(specs, options));
+
 
 // API Routes
 app.use("/api/auth", authRoutes);

@@ -10,6 +10,11 @@ const options = {
       version: "1.0.0",
       description: "API documentation for Famoid",
     },
+    servers: [
+      {
+        url: `http://localhost:${PORT}`,
+      },
+    ],
     components: {
       securitySchemes: {
         bearerAuth: {
