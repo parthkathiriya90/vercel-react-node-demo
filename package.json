@@ -23,13 +23,13 @@
     "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.13",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.0"
+    "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
     "concurrently": "^6.5.1",
     "nodemon": "^3.1.9"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   }
 }
