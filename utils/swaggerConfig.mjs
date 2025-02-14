@@ -12,7 +12,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${PORT}`,
+        url: `https://vercel-react-node-demo.vercel.app`,
       },
     ],
     components: {
