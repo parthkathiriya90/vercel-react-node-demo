@@ -37,7 +37,7 @@ const options = {
 // CDN CSS
 const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
-app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(specs, { customCssUrl: CSS_URL }));
+app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(specs, { customCssUrl: CSS_URL, ...options }));
 
 
 // API Routes
